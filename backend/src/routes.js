@@ -1,14 +1,12 @@
 const express  = require('express')
 const PostController =  require('./controllers/PostController')
+const uploadConfig = require('./config/upload')
+const multer = require('multer')
 
 const routes  = new express.Router()
+const upload = multer( uploadConfig )
 
-routes.post( '/posts', PostController.store )
+routes.post( '/posts', upload.single('image') , PostController.store )
 
-
-routes.get('/', ( req, res ) => {
-
-return res.send(`Olá desenvolverdor ${req.query.name}.`)
-} )
 
 module.exports =  routes 
