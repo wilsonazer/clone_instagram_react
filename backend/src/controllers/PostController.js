@@ -4,7 +4,8 @@ const Post =  require('../models/Post')
 //metodos que serão executados no nosso routes.js
 module.exports = {
     async index( req, res ){
-
+        const posts = await Post.find().sort('-createAt')
+        res.json( posts )
     },
     async store( req, res ){
         const { author, place, description, hastags }  = req.body
