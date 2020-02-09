@@ -1,1 +1,3 @@
-"# clone_instagram_react" 
+# clone instagram using react 
+
+to start backend cd backend && yarn dev or npm run dev
