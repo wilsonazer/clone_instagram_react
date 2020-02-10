@@ -1,0 +1,40 @@
+section#post-list{
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 580px;
+    padding: 0 30px;
+}
+
+section#post-list article{
+    background-color: #fff;
+    border: 1px solid #DDD;
+    margin-top: 30px;
+}
+
+section#post-list article header{
+    padding: 30px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+section#post-list article .user-info {
+     display: flex;
+     flex-direction: column;
+}
+
+section#post-list article .user-info span{
+    font-size: 14px;
+    font-weight: bold;
+}
+section#post-list article .user-info span.place{
+    font-size: 11px;
+    margin-top: 5px;
+    color: #666;
+}
+
+
+section#post-list article > img{
+    max-width: 100%;
+}

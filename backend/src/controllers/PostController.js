@@ -32,7 +32,9 @@ module.exports = {
             hastags,
             image: fileName
         })
-    
+        
+        req.io.emmit('post', post)
+        
         return res.json( post )
     }
 }

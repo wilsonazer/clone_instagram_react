@@ -7,6 +7,8 @@ module.exports = {
         post.likes += 1
         await post.save()
 
+        req.io.emmit( 'like', post )
+       
        return res.json( post )
     }
 }

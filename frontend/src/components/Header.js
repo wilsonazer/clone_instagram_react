@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './Header.css'
 
@@ -9,8 +10,12 @@ const  Header = () =>
 (
      <header id='main-header' >
          <div className='header-content'>
-             <img src={ logo_insta } alt="cloneInsta" className='insta_logo' />
-             <img src={camera} alt="cloneInsta" className='camera-icone' />
+             <Link to='/'>
+                <img src={ logo_insta } alt="cloneInsta" className='insta_logo' />
+             </Link>
+             <Link to='/new'>
+                <img src={camera} alt="cloneInsta" className='camera-icone' />
+             </Link>
          </div>
      </header>
  )
