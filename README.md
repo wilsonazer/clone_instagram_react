@@ -1,6 +1,6 @@
 # Project clone instagram using react 
 
-This aplication contains a backend using express server, and use multer to manipulate the form in multipart-data formate.
+This aplication contains a backend using express server, and use multer to manipulate the form in multipart-data.
 
 # Running the project
 clone or dowload the project and: 
