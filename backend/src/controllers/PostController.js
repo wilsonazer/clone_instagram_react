@@ -7,7 +7,7 @@ const fs = require('fs')
 //metodos que serão executados no nosso routes.js
 module.exports = {
     async index( req, res ){
-        const posts = await Post.find().sort('-createAt')
+        const posts = await Post.find().sort('-createdAt')
         res.json( posts )
     },
     async store( req, res ){
@@ -15,7 +15,7 @@ module.exports = {
         const { filename: image } = req.file
         
         const [ name ] = image.split('.')
-        const fileName = `name.${jpg}`
+        const fileName = `${ name }.jpg`
 
         await sharp( req.file.path )
            .resize(500)
@@ -33,7 +33,7 @@ module.exports = {
             image: fileName
         })
         
-        req.io.emmit('post', post)
+        req.io.emit('post', post)
         
         return res.json( post )
     }

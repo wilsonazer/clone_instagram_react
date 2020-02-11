@@ -24,4 +24,4 @@ app.use( cors() )
 app.use('/files', express.static( path.resolve( __dirname, '..' , 'uploads', 'resized' ) ) )
 app.use( routes )
 
-server.listen(3333)
+server.listen(3333, ()=>{ 'server running on port: 3333'})
