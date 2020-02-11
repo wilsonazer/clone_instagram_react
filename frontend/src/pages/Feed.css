@@ -25,11 +25,11 @@ section#post-list article .user-info {
 }
 
 section#post-list article .user-info span{
-    font-size: 14px;
+    font-size: 1.1em;
     font-weight: bold;
 }
 section#post-list article .user-info span.place{
-    font-size: 11px;
+    font-size: .75em;
     margin-top: 5px;
     color: #666;
 }
@@ -37,4 +37,24 @@ section#post-list article .user-info span.place{
 
 section#post-list article > img{
     max-width: 100%;
+}
+section#post-list article footer{
+    padding:20px;
+}
+section#post-list article footer .actions{
+    margin-bottom: 10px;
+}
+section#post-list article footer .actions i{
+    margin-right: 20px;
+    font-size: 1.45em;
+    color: slateblue;
+}
+section#post-list article footer p{
+    font-size: .9em;
+    margin-top: 4px;
+    line-height: 1.3em ;
+}
+section#post-list article footer span{
+    color: slateblue;
+    display: block;
 }
