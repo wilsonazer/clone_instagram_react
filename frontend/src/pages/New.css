@@ -18,14 +18,22 @@ form#new-post input[type='text']{
     padding: 0 20px;
     border: 3px solid #DDD;
     border-radius: 4px;
+    font-size: 1em;
 }
 
 form#new-post button{
     height: 38px;
     background-color: slateblue;
     color: snow;
-    font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
+    margin-top: 10px;
+    transition: .7s all;
+    font-size: 1em;
 }
-
+form#new-post button:hover{
+    outline: 2px solid slateblue;
+    outline-offset: 3px;
+    font-size: 1.02em;
+    
+}
