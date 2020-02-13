@@ -49,6 +49,11 @@ section#post-list article footer .actions i{
     font-size: 1.45em;
     color: slateblue;
 }
+section#post-list article footer .actions button{
+    border:0;
+    cursor: pointer;
+    background: transparent;
+}
 section#post-list article footer p{
     font-size: .9em;
     margin-top: 4px;

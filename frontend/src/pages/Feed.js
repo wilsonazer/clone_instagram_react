@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import api from '../services/api'
+import io from 'socket.io-client'
 
 import './Feed.css'
+import api from '../services/api'
 
 class Feed extends Component{
     state={
@@ -9,10 +10,30 @@ class Feed extends Component{
     }
 
     async componentDidMount(){
+        
+        this.registerToSocket()
+
         const response = await api.get('/posts')
         
         this.setState({ feed: response.data })
         console.log( this.state.feed)
+    }
+
+    handleLike = async id =>{
+        await api.post(`/posts/${id}/like`)
+    }
+    registerToSocket = () =>{
+        const socket = io('http://localhost:3333')
+
+        socket.on('post', newPost =>{
+            this.setState( { feed: [ newPost, ...this.state.feed ] } )
+        })
+
+        socket.on('like', postLike =>{
+            this.setState({ feed : this.state.feed.map(post =>
+                post._id === postLike._id ? postLike : post
+            ) })
+        })
     }
 
     henderUserFedd = ( post ) => (
@@ -29,7 +50,9 @@ class Feed extends Component{
 
         <footer>
             <div className='actions'>
-                 <i className="fa fa-heart"></i>
+                 <button type='button' onClick={ ()=> this.handleLike(post._id) }>
+                    <i className="fa fa-heart"></i>
+                 </button>
                  <i className="fa fa-comment"></i>
                  <i className="fa fa-paper-plane"></i>
             </div>
