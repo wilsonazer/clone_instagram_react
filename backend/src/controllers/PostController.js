@@ -25,16 +25,21 @@ module.exports = {
             )
         fs.unlinkSync( req.file.path )    
 
-        const post = await Post.create({
-            author,
-            place,
-            description,
-            hastags,
-            image: fileName
-        })
+        try{
+            const post = await Post.create({
+                author,
+                place,
+                description,
+                hastags,
+                image: fileName
+            })
+            //req.io.emit('post', post)
+            
+            return res.json( post )
+
+        }catch(e){
+            colole.log('erro : '+ e)
+        }
         
-        req.io.emit('post', post)
-        
-        return res.json( post )
     }
 }

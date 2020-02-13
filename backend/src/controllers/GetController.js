@@ -1,5 +1,6 @@
 module.exports = {
     index( req, res ){
-        res.send(`<h1> Bem vindo ${ req.query.name }</h1>`)
+        const user = req.query.name ? req.query.name : 'Visitante'
+        res.send(`<h1> Bem vindo ${ user }</h1>`)
     }
 }

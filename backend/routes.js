@@ -2,7 +2,7 @@ const express  = require('express')
 const PostController =  require('./src/controllers/PostController')
 const LikeController = require('./src/controllers/LikeController')
 const GetController = require('./src/controllers/GetController') //get apenas para não ter erro index
-const uploadConfig = require('./src/controllers/config/upload')
+const uploadConfig = require('./src/config/upload')
 const multer = require('multer')
 
 const routes  = new express.Router()
