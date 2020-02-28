@@ -4,7 +4,7 @@
     "slug": "mobile",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": [
+    "platforyarms": [
       "ios",
       "android",
       "web"
