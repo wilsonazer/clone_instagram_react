@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "mobile",
+    "name": "Blank Template",
     "slug": "mobile",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforyarms": [
+    "platforms": [
       "ios",
       "android",
       "web"
